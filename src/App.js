@@ -1,11 +1,10 @@
 import React from 'react';
-import Test from './components/TestComponent/Test';
+import AppContainer from './containers/AppContainer/AppContainer';
 
 const App = () => {
     return (
         <div>
-        <h1>TEST</h1>
-        <Test/>
+            <AppContainer></AppContainer>
         </div>
     )
 }
