@@ -4,6 +4,7 @@ import Modal from '../../components/Modal/Modal';
 import config from '../../config/config';
 import Navigation from '../../components/Navigation/Navigation';
 import Loading from '../../components/Loading/Loading';
+import classes from './AppContainer.css';
 
 const API_ENDPOINT_USER = `https://api.flickr.com/services/rest/?method=flickr.people.getInfo&api_key=${config.API_KEY}&format=json&nojsoncallback=1&user_id=`;
 const API_ENDPOINT = `https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=${config.API_KEY}&format=json&nojsoncallback=1&per_page=16`;
@@ -15,7 +16,7 @@ class AppContainer extends Component {
         images: {},
         openModal: false,
         page: 1,
-        loding: true
+        loading: true
     }
 
     getNewPhotosByPage = () => {
@@ -23,7 +24,7 @@ class AppContainer extends Component {
             loading: true
         })
         let url = `${API_ENDPOINT}&page=${this.state.page}`;
-        console.log(url);
+
         fetch(url)
         .then((response) => {
             return response.json().then((json) => {
@@ -57,7 +58,8 @@ class AppContainer extends Component {
             })
         })
         .catch(() => {
-            console.log("error loading images");
+            // TODO
+            // Controlar que hacer cuando tengamos un error con las imágenes
             this.setState({
                 loading: false
             })
@@ -65,12 +67,11 @@ class AppContainer extends Component {
     }
 
     getPhotoInformation = () => {
-        
             this.setState({
                 loading: true
             })
+
             let url = `${API_ENDPOINT}&page=${this.state.page}`;
-            console.log(url);
             fetch(url)
             .then((response) => {
                 return response.json().then((json) => {
@@ -86,8 +87,8 @@ class AppContainer extends Component {
                 })
             })
             .catch(() => {
-                console.log("error loading info");
-
+                // TODO
+                // Controlar el error
             })
         
     }
@@ -144,7 +145,7 @@ class AppContainer extends Component {
         }
         
         return (
-            <div className="container">
+            <div className={classes.Container}>
             <Navigation
                 nextPage={this.nextPageHandler}
                 prevPage={this.prevPageHandler}
@@ -152,10 +153,10 @@ class AppContainer extends Component {
             {loading}
             {gallery}
             <Modal 
-                        show={this.state.openModal}
-                        hide={this.closeModalImageHandler}
-                        imageData={this.state.selectedImage}
-                    />
+                show={this.state.openModal}
+                hide={this.closeModalImageHandler}
+                imageData={this.state.selectedImage}
+            />
             </div>
         );
     }

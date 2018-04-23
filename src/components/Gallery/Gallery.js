@@ -15,7 +15,7 @@ const gallery = ( props ) => {
         []);
 
     return (
-        <div className="row">
+        <div className="">
             {photos}
         </div>
     );
