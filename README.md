@@ -17,10 +17,11 @@ url: https://b1x1t0.github.io/react-flickr-webpack4/
 
 ** Notas
 - Creado el proyecto desde 'npm init -y'.
-- Instalar dependenias: webpack-cli, react, react-dom, babel...
+- Instaladas dependenias: webpack-cli, react, react-dom, babel...
 - Añadido webpack.config.js, .babelrc, .gitignore.
 - npm run start/build funcionando desde src/index.js
 - Añadido stage-0 en babelrc para el uso de ciertas funcionalidades de ES7.
+- Primera prueba de crear la galeria con flex-box para hacer un diseño responsive.
 
 ```
 react-flickr-webpack4

@@ -1,5 +1,6 @@
 import React from 'react';
 import Photo from './Photo/Photo';
+import classes from './Gallery.css';
 
 const gallery = ( props ) => {
       let photos = Object.keys( props.images )
@@ -15,7 +16,7 @@ const gallery = ( props ) => {
         []);
 
     return (
-        <div className="">
+        <div className={classes.Gallery}>
             {photos}
         </div>
     );

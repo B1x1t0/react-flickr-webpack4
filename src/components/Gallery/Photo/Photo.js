@@ -11,16 +11,12 @@ class Image extends Component {
             userName = this.props.image.owner.username._content;
         }
 
-        return <div className="">
-                <div className={classes.Card}>
-                    <img className={classes.CardContainer}src={this.props.image.url} onClick={this.props.selectImage} alt={this.props.image.url}/>
-                    <div className="">
-                        <h4 className="">
-                            <a href={profileUrl}>{userName}</a>
-                        </h4>
+        return <div className={classes.Card}>
+                    <img src={this.props.image.url} onClick={this.props.selectImage} alt={this.props.image.url}/>
+                    <div className={classes.CardDetail}>
+                        <a href={profileUrl} target="_blank">{userName}</a>
                     </div>
-                </div>
-            </div>;
+                </div>;
     }
 }
 
