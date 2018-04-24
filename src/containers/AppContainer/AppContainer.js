@@ -16,7 +16,8 @@ class AppContainer extends Component {
         images: {},
         openModal: false,
         page: 1,
-        loading: true
+        loading: false,
+        error: ''
     }
 
     getNewPhotosByPage = () => {
@@ -51,6 +52,9 @@ class AppContainer extends Component {
                         })   
                     })
                     .catch(() => {
+                        this.setState({
+                            error: config.apiMessages.error.general
+                        })
                     })
             });
             this.setState({
@@ -58,10 +62,9 @@ class AppContainer extends Component {
             })
         })
         .catch(() => {
-            // TODO
-            // Controlar que hacer cuando tengamos un error con las imágenes
             this.setState({
-                loading: false
+                loading: false,
+                error: config.apiMessages.error.general
             })
         })
     }
@@ -87,8 +90,10 @@ class AppContainer extends Component {
                 })
             })
             .catch(() => {
-                // TODO
-                // Controlar el error
+                this.setState({
+                    loading: false,
+                    error: config.apiMessages.error.general
+                })
             })
         
     }
@@ -97,7 +102,6 @@ class AppContainer extends Component {
         this.getNewPhotosByPage();
     }
    
-
     changeCategoryHandler = () => {
         this.setState( { purchasing: true } );
     }
