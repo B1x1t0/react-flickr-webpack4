@@ -1,7 +1,8 @@
 # React Flickr Component with Webpack 4
 
-* [Demo] - Demo en github pages.
-* [Notas] - Notas durante el desarrollo
+* [Demo] (#Demo) - Demo en github pages.
+* [Notas] (#Notas) - Notas durante el desarrollo
+* [TODO] (#TODO) - Mejoras necesarias
 
 ** How to use
 ```sh
@@ -23,6 +24,7 @@ url: https://b1x1t0.github.io/react-flickr-webpack4/
 - Añadido stage-0 en babelrc para el uso de ciertas funcionalidades de ES7.
 - Primera prueba de crear la galeria con flex-box para hacer un diseño responsive.
 - Creado error en el state para comprobar el estado de la llamada.
+- Para el css de las cards se ha utilizado flexbox.
 
 ```
 react-flickr-webpack4
@@ -46,3 +48,15 @@ react-flickr-webpack4
     └── containers
         └── ...
 ```
+
+
+## TODO
+- Se podria añadir Redux para el estado de la aplicación (Fotos, paginación, estado del modal...).
+- Mirar la forma de pedir imágenes de menor tamaño cuando se peticiona desde S/mobile.
+    Asi ahorramos transferencia y la carga se agiliza.
+- Unit test.
+    Navegación.
+    Abrir/Cerrar Modal.
+    Peticiones.
+- Icono para cerrar el modal en vez del texto de close.
+- Lazy loading para las imágenes.
