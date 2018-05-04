@@ -55,6 +55,7 @@ react-flickr-webpack4
 - Mirar la forma de pedir imágenes de menor tamaño cuando se peticiona desde S/mobile.
     Asi ahorramos transferencia y la carga se agiliza.
 - Unit test.
+    Componentes.
     Navegación.
     Abrir/Cerrar Modal.
     Peticiones.
